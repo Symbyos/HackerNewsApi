@@ -1,11 +1,12 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Text;
+using System.Text.Json.Serialization;
 
 namespace HackerNewsApi.Models
 {
     /// <summary>
     /// Represents a news
     /// </summary>
-    public class News
+    public record class News
     {
         [JsonPropertyName("title")]
         public string Title { get; set; }

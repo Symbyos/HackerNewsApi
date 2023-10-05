@@ -2,7 +2,7 @@
 
 namespace HackerNewsApi.Services
 {
-    public interface IHackerNewsServiceApi
+    public interface IHackerNewsApiService
     {
         Task<IList<News>> GetBestNewsByScoreDescending();
     }

@@ -1,11 +1,12 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Text;
+using System.Text.Json.Serialization;
 
 namespace HackerNewsApi.Models
 {
     /// <summary>
     /// Represents a news as represented by the HackerNews API
     /// </summary>
-    public class HackerNews
+    public record class HackerNews
     {
         [JsonPropertyName("by")]
         public string Author { get; set; }
@@ -41,6 +42,15 @@ namespace HackerNewsApi.Models
             Title = string.Empty;
             Type = string.Empty;
             Url = string.Empty;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            
+
+            return stringBuilder.ToString();
         }
     }
 }

@@ -4,7 +4,7 @@ using HackerNewsApi.Services;
 
 namespace HackerNewsApi.Handlers
 {
-    public class HackerNewsServiceApi : IHackerNewsServiceApi
+    public class HackerNewsApiService : IHackerNewsApiService
     {
         static readonly string URL_BEST_STORIES = "https://hacker-news.firebaseio.com/v0/beststories.json";
 
@@ -16,7 +16,7 @@ namespace HackerNewsApi.Handlers
 
         HttpClient HttpClient { get; }
 
-        public HackerNewsServiceApi()
+        public HackerNewsApiService()
         {
             HttpClient = new HttpClient();
         }

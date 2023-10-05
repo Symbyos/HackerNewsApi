@@ -8,20 +8,20 @@ namespace HackerNewsApi.Controllers
     [Route("[controller]")]
     public class HackerNewsController : ControllerBase
     {
-        private readonly IHackerNewsServiceApi _hackerNewsService;
+        private readonly IHackerNewsApiService _hackerNewsApiService;
 
         private readonly ILogger<HackerNewsController> _logger;
 
-        public HackerNewsController(ILogger<HackerNewsController> logger, IHackerNewsServiceApi hackerNewsServiceApi)
+        public HackerNewsController(ILogger<HackerNewsController> logger, IHackerNewsApiService hackerNewsServiceApi)
         {
             _logger = logger;
-            _hackerNewsService = hackerNewsServiceApi;
+            _hackerNewsApiService = hackerNewsServiceApi;
         }
 
         [HttpGet(Name = "GetBestNewsByScoreDescending")]
         async public Task<IList<News>> GetBestNews()
         {
-            return await _hackerNewsService.GetBestNewsByScoreDescending();
+            return await _hackerNewsApiService.GetBestNewsByScoreDescending();
         }
     }
 }
