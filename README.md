@@ -19,7 +19,7 @@ In a `Windows` based terminal, type the following commands :
 - `docker build ../. -f Dockerfile -t hackernewsapi --progress=plain`
 - `docker run -d --name=hackernewsapi -p 8080:80 -p 8443:443 hackernewsapi`
 
-Once the deployment is finished, you can query the following endpoint :
+Once the deployment is finished, you can query the following endpoint (please note that no prefetching is implemented, the first call to the API will be pretty slow as the service needs to initialize its cache) :
 
 - `http://localhost:8080/hackernews`
 
