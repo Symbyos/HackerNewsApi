@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json.Serialization;
+using SystemTextJsonSamples;
 
 namespace HackerNewsApi.Models
 {
@@ -18,12 +19,13 @@ namespace HackerNewsApi.Models
         public string Author { get; set; }
 
         [JsonPropertyName("time")]
-        public DateTime Time { get; set; }
+        [JsonConverter(typeof(DateTimeOffsetJsonConverter))]
+        public DateTimeOffset Time { get; set; }
 
         [JsonPropertyName("score")]
         public int Score { get; set; }
 
-        [JsonPropertyName("descendants")]
+        [JsonPropertyName("commentCount")]
         public int CommentCount { get; set; }
 
         public News()
