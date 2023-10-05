@@ -47,3 +47,5 @@ Based on the current HackerNews API description https://github.com/HackerNews/AP
 - Externalize logs into a logging stack like `ELK` (`Elasticsearch`, `Logstash`, `Kibana`) or other solutions
 - Add a load balancer to handle more queries to our API (`HAProxy`, ...)
 - Add a retry strategy when not receiving status code 200 to the http queries
+- Add unit tests and integration tests
+- Add GitHub workflow to publish and test releases
