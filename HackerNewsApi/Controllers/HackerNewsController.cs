@@ -18,10 +18,10 @@ namespace HackerNewsApi.Controllers
             _hackerNewsService = hackerNewsServiceApi;
         }
 
-        [HttpGet(Name = "GetBestNews")]
+        [HttpGet(Name = "GetBestNewsByScoreDescending")]
         async public Task<IList<News>> GetBestNews()
         {
-            return await _hackerNewsService.GetBestNewsIdsByScoreDescending();
+            return await _hackerNewsService.GetBestNewsByScoreDescending();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace HackerNewsApi.Handlers
             HttpClient = new HttpClient();
         }
 
-        async public Task<IList<News>> GetBestNewsIdsByScoreDescending()
+        async public Task<IList<News>> GetBestNewsByScoreDescending()
         {
             return (await GetBestNewsIds()).Select(x => new News(x)).OrderByDescending(x => x.Score).ToList();
         }

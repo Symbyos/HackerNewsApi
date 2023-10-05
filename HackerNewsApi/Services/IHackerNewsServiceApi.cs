@@ -4,6 +4,6 @@ namespace HackerNewsApi.Services
 {
     public interface IHackerNewsServiceApi
     {
-        Task<IList<News>> GetBestNewsIdsByScoreDescending();
+        Task<IList<News>> GetBestNewsByScoreDescending();
     }
 }
