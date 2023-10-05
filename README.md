@@ -33,7 +33,11 @@ Output :
 
 ### Assumptions :
 
-Based on the current HackerNews API description https://github.com/HackerNews/API#uri-and-versioning, there is no rate limit and it could change in the future.
+Based on the current HackerNews API description https://github.com/HackerNews/API#uri-and-versioning, there is no rate limit and it could change in the future. A possible rate limiter strategy could be implemented, if there is any not documented limit, as it happens with some data providers.
+
+As commented there [link](https://github.com/Symbyos/HackerNewsApi/blob/38029ea095e94265f81c5092cc16cf2aa6155470/HackerNewsApi/Services/HackerNewsApiService.cs#L77), the usage of a lock primitive could slow down parallel queries.
+Thus, to preserve the performance of the application, I preferred to allow multiple insertion into the cache, in place of locking, as each news is never invalidated.
+Also, if the application is never restarted, the cache could cause an OutOfMemoryException, as it will expand indefinitely and will not be collected by the Garbage Collector. But the current memory footprint is pretty low.
 
 ### Next steps :
 
