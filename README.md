@@ -41,6 +41,7 @@ Also, if the application is never restarted, the cache could cause an OutOfMemor
 
 ### Next steps :
 
+- Add parallelization of query to the external HackerNewsApi
 - Add prefetching of the queries at application startup and in a background thread loop, to serve quickly new queries with the up-to-date cache
 - Add certificate to the endpoint for secure connection
 - Deploy the service in a `Kubernetes` cluster in a cloud provider of choice and add redundancy with multiple pods
