@@ -43,14 +43,5 @@ namespace HackerNewsApi.Models
             Type = string.Empty;
             Url = string.Empty;
         }
-
-        public override string ToString()
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-
-            
-
-            return stringBuilder.ToString();
-        }
     }
 }
